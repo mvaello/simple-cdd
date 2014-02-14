@@ -1,0 +1,29 @@
+less
+simple-cdd-profiles
+firmware-linux-nonfree
+# taken from x-basic.packages
+
+# window manager
+icewm
+
+# x-teminal-emulator 
+# rxvt-unicode - 8elw aterm h genika kapoio pio omorfo alla light terminal
+aterm
+
+# menus up to date
+#menu logika auto organwnei to menu ston icewm alla katse na to dokimasw kai xwris auto
+
+# login manager
+#xdm (stock apo x-basic.packages - 8elw SLiM egw na dokimasw
+slim
+
+# includes startx
+xbase-clients
+
+# X
+xorg
+
+# workaround http://bugs.debian.org/405639
+xserver-xorg-input-all
+xserver-xorg-video-all
+
