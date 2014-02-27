@@ -1,0 +1,22 @@
+less
+simple-cdd-profiles
+firmware-linux-nonfree
+
+# login manager
+slim
+
+# includes startx
+xbase-clients
+
+# X
+xorg
+
+#DE
+xfce4
+#xfce4-goodies
+#goodies will be removed. just want to see free -m after this
+
+# workaround http://bugs.debian.org/405639
+xserver-xorg-input-all
+xserver-xorg-video-all
+

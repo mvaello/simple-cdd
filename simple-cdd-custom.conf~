@@ -1,4 +1,0 @@
-debian_mirror="http://ftp2.fr.debian.org/debian/"
-mirror_components="main contrib non-free"
-export ARCH="i386"
-profiles="proftest"

@@ -40,7 +40,7 @@ d-i clock-setup/utc boolean true
 # in one of those countries, you can choose its standard time zone via this
 # question.
 base-config tzconfig/choose_country_zone_single boolean true
-#d-i     time/zone       select  US/Pacific
+d-i     time/zone       select  US/Pacific
 
 
 ### keyboard configuration
@@ -50,26 +50,26 @@ console-common  console-data/keymap/policy      select  Don't touch keymap
 console-data    console-data/keymap/policy      select  Don't touch keymap
 
 # keyboard layouts
-#console-data console-data/keymap/qwerty/layout select US american
-#console-data console-data/keymap/family select qwerty
-#console-common console-data/keymap/family select qwerty
+console-data console-data/keymap/qwerty/layout select US american
+console-data console-data/keymap/family select qwerty
+console-common console-data/keymap/family select qwerty
 
 
 ###### Account setup.
 
 # To preseed the root password, you have to put it in the clear in this
 # file. That is not a very good idea, use caution!
-#passwd   passwd/root-password    password r00tme
-#passwd   passwd/root-password-again  password r00tme
+passwd   passwd/root-password    password 12345
+passwd   passwd/root-password-again  password 12345
 
 # If you want to skip creation of a normal user account.
 #passwd   passwd/make-user    boolean false
 # Alternatively, you can preseed the user's name and login.
-#passwd   passwd/user-fullname    string Debian User
-#passwd   passwd/username     string debian
+passwd   passwd/user-fullname    string test User
+passwd   passwd/username     string test
 # And their password, but use caution!
-#passwd   passwd/user-password    password insecure
-#passwd   passwd/user-password-again  password insecure
+passwd   passwd/user-password    password 123
+passwd   passwd/user-password-again  password 123
 
 
 #### Network configuration.
@@ -115,15 +115,15 @@ d-i partman-auto/method string regular
 #d-i partman-auto/init_automatically_partition       select  Guided - use entire disk
 
 # You can choose from any of the predefined partitioning recipes:
-d-i partman-auto/choose_recipe  select All files in one partition (recommended for new users)
-#d-i  partman-auto/choose_recipe  select Desktop machine
+#d-i partman-auto/choose_recipe  select All files in one partition (recommended for new users)
+d-i  partman-auto/choose_recipe  select Desktop machine
 #d-i  partman-auto/choose_recipe  select Multi-user workstation
 
 # uncomment the following three values to makes partman automatically partition
 # without confirmation.
-#d-i partman/confirm_write_new_label boolean true
+d-i partman/confirm_write_new_label boolean true
 d-i partman/choose_partition  select Finish partitioning and write changes to disk
-#d-i partman/confirm     boolean true
+d-i partman/confirm     boolean true
 
 #### Boot loader installation.
 
@@ -145,14 +145,14 @@ d-i grub-installer/with_other_os  boolean true
 # don't ask to use additional mirrors
 #base-config apt-setup/another boolean false
 # Use a network mirror?
-# apt-mirror-setup        apt-setup/use_mirror    boolean false
+apt-mirror-setup        apt-setup/use_mirror    boolean true
 
 # Do enable security updates.
-#base-config apt-setup/security-updates  boolean true
+base-config apt-setup/security-updates  boolean true
 
 # You can choose to install non-free and contrib software.
-#d-i apt-setup/non-free  boolean true
-#d-i apt-setup/contrib boolean true
+d-i apt-setup/non-free  boolean true
+d-i apt-setup/contrib boolean true
 
 
 ###### Mailer configuration.
@@ -175,7 +175,7 @@ base-config base-config/intro note
 # Avoid the final message.
 base-config base-config/login note 
 
-#d-i     popularity-contest/participate  boolean false
+d-i     popularity-contest/participate  boolean false
 
 
 ### simple-cdd commands
